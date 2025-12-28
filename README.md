@@ -1,27 +1,59 @@
-﻿# 🎵 Emotion Player (EP)
-An intelligent Android music discovery engine that synchronizes your Spotify playback with your real-time "vibe"—calculated from gestures, weather data, and personal history.
-
-## 🧠 The Core: VibePipeline
-The heart of this app is the `VibePipeline`, which utilizes a multi-stage **Aggressive Pooling** strategy:
-1. **Sensor Fusion:** Combines `GestureData` and `WeatherModule` outputs via a custom `FusionEngine`.
-2. **Refinement:** The `Personalizer` adjusts candidates based on your skip/play history.
-3. **Discovery & Fallbacks:** 
-   - Primary: High-popularity tracks matching the current emotion.
-   - Fallback 1: Genre-specific search if recommendations are thin.
-   - Fallback 2: Secondary emotion injection.
-   - Absolute Safety: Broad 2024 discovery pool to ensure 0% failure rate.
-
-## 🛠️ Tech Stack
-- **UI:** Jetpack Compose (Material 3)
-- **Backend:** Kotlin Coroutines & Flow
-- **API Integration:** Spotify App Remote & Web API, OpenWeather Maps
-- **Data:** GSON for complex JSON parsing of Spotify's recommendation clusters
-- **Personalization:** Local preference learning algorithm
-
-## 🚀 Key Features
-- **Vibe Check:** Real-time emotion classification.
-- **Aggressive Pooling:** Ensures a fresh 10-song playlist every time the environment changes.
-- **Smart History:** The `Personalizer` ensures you don't hear the same tracks too often.
+# 🎵 Emotion Player (EP)
+**Emotion Player** is an intelligent Android music discovery engine that bridges the gap between environmental sensors and Spotify playback. It uses a custom **VibePipeline** to translate physical gestures, real-time weather, and historical "Soul Profile" data into perfect musical matches.
 
 ---
-*Developed by Vansh - A fusion of Music, Data, and Emotion.*
+
+## 🧠 Core Architecture: The VibePipeline
+The app doesn't just search for genres; it executes a multi-stage **Aggressive Pooling** strategy to ensure a 0% failure rate in music discovery.
+
+### 1. The Fusion Engine (`FusionEngine.kt`)
+Combines multi-modal data into a unified "Emotion Vector":
+*   **Gesture Analysis:** Calculates motion intensity using distance vectors ($\sqrt{dx^2 + dy^2}$) and touch pressure.
+*   **Weather Integration:** Maps 50+ weather conditions (from OpenWeather) to psychological states (e.g., *Haze* → *Fearful*, *Spring* → *Joyful*).
+*   **Temporal Bias:** Adjusts music suggestions based on time-of-day (e.g., *5 AM - 8 AM* → *Hopeful*).
+
+### 2. The Personalizer (`Personalizer.kt`)
+The "Soul Profile" (`soul_profile.json`) tracks your emotional affinity:
+*   **Dynamic Weighting:** Every Skip or Like adjusts the 32-emotion weight map.
+*   **Audio Feature Learning:** Uses Spotify's `valence`, `energy`, and `tempo` features to retroactively update your profile based on what you actually listen to.
+
+### 3. Aggressive Pooling Strategy
+To prevent empty playlists, the pipeline uses a 4-tier fallback:
+1.  **Primary Match:** High-popularity tracks from the top-scored emotion.
+2.  **Genre Expansion:** If the pool is < 20, it expands via genre-specific Spotify searches.
+3.  **Secondary Injection:** Pulls from the next two most likely emotions.
+4.  **Absolute Safety:** Uses a broad "Year: 2024" discovery pool to ensure the music never stops.
+
+---
+
+## 🎨 Creative UI & Math
+The app features a **RandomRotatedGestureSwipeHint** system that uses procedural path generation on a Compose `Canvas`:
+*   **Geometric Paths:** Includes math-heavy implementations for **Infinity (Lemniscate of Bernoulli)**, **Archimedean Spirals**, and **Sinusoidal Waves**.
+*   **Material 3:** A dark-themed, immersive UI using Jetpack Compose and Coil for asynchronous image loading.
+
+---
+
+## 🛠️ Tech Stack
+- **Language:** 100% Kotlin
+- **UI:** Jetpack Compose (Animations, Canvas, Material 3)
+- **Networking:** OkHttp3, Retrofit, GSON
+- **APIs:** Spotify (App Remote + Web API), OpenWeatherMaps
+- **Location:** Google Play Services (FusedLocationProvider)
+- **Conscurrency:** Kotlin Coroutines & Flow
+
+---
+
+## 🚀 Setup & Installation
+1.  **Clone the Repo:** `git clone https://github.com/vizansh/Emotion-Player.git`
+2.  **API Keys:** Create a `local.properties` file in the root directory and add your credentials:
+3.  **Requirements:**
+◦The official Spotify app must be installed and logged in on the device.
+◦GPS must be enabled for the WeatherModule to sync the vibe.
+◦Android Studio Ladybug (2024.2.1+) is recommended.
+4.  **Spotify App Remote:** Ensure the official Spotify app is installed on your device, as this project utilizes the [Spotify App Remote SDK](https://developer.spotify.com/documentation/android/) for playback control.
+5.  **Build:** Open in Android Studio (Ladybug 2024.2.1 or newer) and sync Gradle.
+
+---
+*Developed by Vansh — Where Code, Climate, and Chords Collide.*
+
+    
