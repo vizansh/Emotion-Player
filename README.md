@@ -30,6 +30,11 @@ To prevent empty playlists, the pipeline uses a 4-tier fallback:
 The app features a **RandomRotatedGestureSwipeHint** system that uses procedural path generation on a Compose `Canvas`:
 *   **Geometric Paths:** Includes math-heavy implementations for **Infinity (Lemniscate of Bernoulli)**, **Archimedean Spirals**, and **Sinusoidal Waves**.
 *   **Material 3:** A dark-themed, immersive UI using Jetpack Compose and Coil for asynchronous image loading.
+---
+
+
+https://github.com/user-attachments/assets/b070341d-e153-4a44-b9d9-6f40098a1ad3
+
 
 ---
 
