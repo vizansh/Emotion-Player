@@ -31,10 +31,17 @@ The app features a **RandomRotatedGestureSwipeHint** system that uses procedural
 *   **Geometric Paths:** Includes math-heavy implementations for **Infinity (Lemniscate of Bernoulli)**, **Archimedean Spirals**, and **Sinusoidal Waves**.
 *   **Material 3:** A dark-themed, immersive UI using Jetpack Compose and Coil for asynchronous image loading.
 ---
+## Demo
 
 
 https://github.com/user-attachments/assets/b070341d-e153-4a44-b9d9-6f40098a1ad3
 
+
+<img width="1080" height="2400" alt="Screenshot_2026-06-17-22-39-17-100_com vansh ep" src="https://github.com/user-attachments/assets/c0a63a88-064b-4063-87d4-4815104b8235" />
+
+<img width="1080" height="2400" alt="Screenshot_2026-06-17-22-39-09-915_com vansh ep" src="https://github.com/user-attachments/assets/3afccad9-8e7e-4402-8235-94e4d0241812" />
+
+<img width="1080" height="2400" alt="Screenshot_2026-06-17-22-39-31-860_com vansh ep" src="https://github.com/user-attachments/assets/0b126c51-da6e-478c-9c83-6226a20f1049" />
 
 ---
 
