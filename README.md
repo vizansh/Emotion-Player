@@ -64,7 +64,7 @@ https://github.com/user-attachments/assets/b070341d-e153-4a44-b9d9-6f40098a1ad3
 ◦Android Studio Ladybug (2024.2.1+) is recommended.
 4.  **Spotify App Remote:** Ensure the official Spotify app is installed on your device, as this project utilizes the [Spotify App Remote SDK](https://developer.spotify.com/documentation/android/) for playback control.
 5.  **Build:** Open in Android Studio (Ladybug 2024.2.1 or newer) and sync Gradle.
-6.  **Android:** download the .apk
+6.  **Android:** download the .apk to play on android.
 
 ---
 *Developed by Vansh — Where Code, Climate, and Chords Collide.*
